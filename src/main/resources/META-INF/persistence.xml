@@ -1,0 +1,48 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <!-- Unidade de Persistência para o MariaDB -->
+    <persistence-unit name="trabalhofinal" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- classes de entidade -->
+        <class>br.edu.unifei.ecot13.projetofinal.CommonLamb</class>
+        <class>br.edu.unifei.ecot13.projetofinal.CrossbredLamb</class>
+        <class>br.edu.unifei.ecot13.projetofinal.Farm</class>
+        <class>br.edu.unifei.ecot13.projetofinal.FlatFarm</class>
+        <class>br.edu.unifei.ecot13.projetofinal.Flock</class>
+        <class>br.edu.unifei.ecot13.projetofinal.ImpureLamb</class>
+        <class>br.edu.unifei.ecot13.projetofinal.Lamb</class>
+        <class>br.edu.unifei.ecot13.projetofinal.Levite</class>
+        <class>br.edu.unifei.ecot13.projetofinal.MountainFarm</class>
+        <class>br.edu.unifei.ecot13.projetofinal.Priest</class>
+        <class>br.edu.unifei.ecot13.projetofinal.PureLamb</class>
+        <class>br.edu.unifei.ecot13.projetofinal.SacrificialLamb</class>
+        <class>br.edu.unifei.ecot13.projetofinal.Shepherd</class>
+        <class>br.edu.unifei.ecot13.projetofinal.Temple</class>
+
+        <properties>
+            <!-- Configurações do Banco de Dados MariaDB -->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/legal" />
+            <property name="javax.persistence.jdbc.user" value="legal" />
+            <property name="javax.persistence.jdbc.driver"
+                      value="org.mariadb.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.password" value="legal" />
+
+            <!-- Configurações do Hibernate -->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.MariaDBDialect" />
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="create" />
+
+            <!-- Configurações de exibição do SQL -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+
+</persistence>
